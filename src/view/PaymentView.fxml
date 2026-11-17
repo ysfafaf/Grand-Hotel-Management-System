@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane prefHeight="720.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaymentController">
+   <top>
+      <fx:include source="MenuBarView.fxml" />
+   </top>
+   <center>
+      <HBox spacing="20.0">
+         <padding>
+            <Insets bottom="16.0" left="20.0" right="20.0" top="16.0" />
+         </padding>
+         <children>
+            <VBox spacing="14.0" styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="title-medium" text="Rincian Tagihan Reservasi" />
+                  <Separator />
+                  <GridPane hgap="12.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints minWidth="150.0" prefWidth="180.0" />
+                      <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="150.0" prefWidth="180.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="24.0" />
+                      <RowConstraints minHeight="24.0" />
+                        <RowConstraints minHeight="24.0" />
+                      <RowConstraints minHeight="24.0" />
+                        <RowConstraints minHeight="24.0" />
+                        <RowConstraints minHeight="24.0" />
+                        <RowConstraints minHeight="24.0" />
+                        <RowConstraints minHeight="24.0" />
+                        <RowConstraints minHeight="30.0" />
+                    </rowConstraints>
+                     <children>
+                        <Label style="-fx-font-weight: bold;" text="Tamu:" />
+                        <Label fx:id="lblInfoTamu" text="Nama Tamu" GridPane.columnIndex="1" />
+                        <Label style="-fx-font-weight: bold;" text="Kamar &amp; Durasi:" GridPane.rowIndex="1" />
+                        <Label fx:id="lblInfoKamar" text="Kamar &amp; Durasi" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Subtotal Tarif Kamar:" GridPane.rowIndex="2" />
+                        <Label fx:id="lblSubtotal" text="Rp 0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Diskon Durasi Inap:" GridPane.rowIndex="3" />
+                        <Label fx:id="lblDiskonTipe" text="Rp 0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Diskon Member (5%):" GridPane.rowIndex="4" />
+                        <Label fx:id="lblDiskonMember" text="Rp 0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Potongan Kode Promo:" GridPane.rowIndex="5" />
+                        <Label fx:id="lblPotonganPromo" text="Rp 0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Biaya Fasilitas Tambahan:" GridPane.rowIndex="6" />
+                        <Label fx:id="lblBiayaFasilitas" text="Rp 0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="Biaya Admin Transfer:" GridPane.rowIndex="7" />
+                        <Label fx:id="lblBiayaAdmin" text="Rp 0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #1A365D;" text="TOTAL TAGIHAN:" GridPane.rowIndex="8" />
+                        <Label fx:id="lblTotalTagihan" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #D69E2E;" text="Rp 0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <VBox maxWidth="420.0" minWidth="380.0" spacing="16.0" styleClass="card">
+               <children>
+                  <Label styleClass="title-medium" text="Metode Pembayaran" />
+                  <Separator />
+                  <HBox spacing="20.0">
+                     <children>
+                        <RadioButton fx:id="rdoTunai" selected="true" text="Tunai (Cash)">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tgMetode" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rdoTransfer" text="Transfer Bank" toggleGroup="$tgMetode" />
+                     </children>
+                  </HBox>
+                  <VBox fx:id="boxTunai" spacing="8.0">
+                     <children>
+                        <Label text="Nominal Uang Tunai Diterima (Rp):" />
+                        <TextField fx:id="txtNominalTunai" promptText="Masukkan nominal uang tunai" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="boxTransfer" spacing="10.0">
+                     <children>
+                        <Label text="Pilih Bank Tujuan:" />
+                        <ComboBox fx:id="cmbBank" maxWidth="1.7976931348623157E308" />
+                        <Label text="Nomor Referensi Transfer (6-20 digit):" />
+                        <TextField fx:id="txtNoReferensi" promptText="Masukkan no referensi bukti transfer" />
+                        <Label text="Nominal Transfer (Rp):" />
+                        <TextField fx:id="txtNominalTransfer" promptText="Masukkan nominal transfer" />
+                        <Label style="-fx-text-fill: #718096; -fx-font-size: 11px;" text="*Transfer dikenakan biaya admin Rp 2.500" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="btnKonfirmasi" maxWidth="1.7976931348623157E308" onAction="#onKonfirmasiPembayaran" styleClass="button-gold" text="Konfirmasi Pembayaran" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <VBox spacing="10.0" style="-fx-background-color: #EDF2F7; -fx-border-color: #CBD5E0; -fx-border-width: 1px 0 0 0;">
+         <padding>
+            <Insets bottom="16.0" left="20.0" right="20.0" top="12.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="16.0">
+               <children>
+                  <Label style="-fx-font-weight: bold; -fx-font-size: 13px;" text="Bukti Struk Transaksi (Muncul setelah pembayaran berhasil):" />
+                  <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="btnSimpanStruk" onAction="#onSimpanStruk" styleClass="button-success" text="Simpan Struk (.txt)" />
+                        <Button fx:id="btnKembaliDashboard" onAction="#onKembaliKeDashboard" styleClass="button" text="Kembali ke Dashboard" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <TextArea fx:id="txtStruk" editable="false" prefHeight="160.0" promptText="Struk pembayaran akan ditampilkan di sini..." styleClass="receipt-text-area" />
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
