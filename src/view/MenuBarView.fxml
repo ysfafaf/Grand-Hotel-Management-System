@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<MenuBar xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuBarController">
+   <menus>
+      <Menu text="File">
+         <items>
+            <MenuItem onAction="#onDashboard" text="Dashboard" />
+            <SeparatorMenuItem />
+            <MenuItem onAction="#onKeluar" text="Keluar" />
+         </items>
+      </Menu>
+      <Menu text="Data Master">
+         <items>
+            <MenuItem onAction="#onDataKamar" text="Data Kamar" />
+            <MenuItem onAction="#onDataPelanggan" text="Data Pelanggan" />
+         </items>
+      </Menu>
+      <Menu text="Transaksi">
+         <items>
+            <MenuItem onAction="#onReservasiBaru" text="Reservasi Baru" />
+            <MenuItem onAction="#onRiwayatReservasi" text="Riwayat Reservasi" />
+         </items>
+      </Menu>
+      <Menu text="Help">
+         <items>
+            <MenuItem onAction="#onTentang" text="Tentang GHMS" />
+         </items>
+      </Menu>
+      <Menu text="Log Out">
+         <items>
+            <MenuItem onAction="#onLogOut" text="Log Out Sesi" />
+         </items>
+      </Menu>
+   </menus>
+</MenuBar>

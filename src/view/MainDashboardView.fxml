@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane prefHeight="720.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <top>
+      <fx:include source="MenuBarView.fxml" />
+   </top>
+   <center>
+      <TabPane fx:id="tabPaneDashboard" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabKamar" text="1. Master Data Kamar">
+             <content>
+                <fx:include fx:id="kamarTab" source="KamarTabView.fxml" />
+             </content>
+          </Tab>
+          <Tab fx:id="tabPelanggan" text="2. Master Data Pelanggan">
+             <content>
+                <fx:include fx:id="pelangganTab" source="PelangganTabView.fxml" />
+             </content>
+          </Tab>
+          <Tab fx:id="tabReservasiBaru" text="3. Buat Reservasi Baru">
+             <content>
+                <fx:include fx:id="reservasiTab" source="ReservasiTabView.fxml" />
+             </content>
+          </Tab>
+          <Tab fx:id="tabRiwayatReservasi" text="4. Riwayat Reservasi &amp; Check-out">
+             <content>
+                <fx:include fx:id="riwayatTab" source="RiwayatTabView.fxml" />
+             </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" styleClass="status-bar" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblStatusBar" text="Login sebagai: admin | Total Kamar: 0 | Tersedia: 0" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

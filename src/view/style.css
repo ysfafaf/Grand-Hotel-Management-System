@@ -1,0 +1,174 @@
+.root {
+    -fx-font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #F7FAFC;
+    -fx-text-fill: #2D3748;
+}
+.menu-bar {
+    -fx-background-color: #1A365D;
+    -fx-padding: 2px 6px;
+}
+.menu-bar .label {
+    -fx-text-fill: #EDF2F7;
+    -fx-font-weight: 500;
+}
+.menu-bar .menu:hover, .menu-bar .menu:showing {
+    -fx-background-color: #2A4365;
+}
+.context-menu {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 4px;
+}
+.menu-item:focused {
+    -fx-background-color: #EBF8FF;
+}
+.menu-item .label {
+    -fx-text-fill: #2D3748;
+}
+.tab-pane {
+    -fx-tab-min-height: 38px;
+    -fx-tab-max-height: 38px;
+    -fx-background-color: transparent;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #EDF2F7;
+}
+.tab-pane .tab {
+    -fx-background-color: #E2E8F0;
+    -fx-background-radius: 6px 6px 0 0;
+    -fx-padding: 6px 16px;
+    -fx-cursor: hand;
+}
+.tab-pane .tab:selected {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CBD5E0 #CBD5E0 transparent #CBD5E0;
+    -fx-border-width: 1px 1px 0 1px;
+}
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #4A5568;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #1A365D;
+}
+.button {
+    -fx-background-color: #2B6CB0;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: #2C5282;
+}
+.button:pressed {
+    -fx-background-color: #1A365D;
+}
+.button-success {
+    -fx-background-color: #38A169;
+    -fx-text-fill: #FFFFFF;
+}
+.button-success:hover {
+    -fx-background-color: #2F855A;
+}
+.button-danger {
+    -fx-background-color: #E53E3E;
+    -fx-text-fill: #FFFFFF;
+}
+.button-danger:hover {
+    -fx-background-color: #C53030;
+}
+.button-secondary {
+    -fx-background-color: #EDF2F7;
+    -fx-text-fill: #4A5568;
+    -fx-border-color: #CBD5E0;
+    -fx-border-radius: 6px;
+}
+.button-secondary:hover {
+    -fx-background-color: #E2E8F0;
+}
+.button-gold {
+    -fx-background-color: #D69E2E;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+}
+.button-gold:hover {
+    -fx-background-color: #B7791F;
+}
+.text-field, .password-field, .combo-box, .date-picker, .spinner {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CBD5E0;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 6px 10px;
+    -fx-font-size: 13px;
+}
+.text-field:focused, .password-field:focused, .combo-box:focused, .date-picker:focused, .spinner:focused {
+    -fx-border-color: #3182CE;
+    -fx-effect: dropshadow(three-pass-box, rgba(49, 130, 206, 0.25), 5, 0, 0, 0);
+}
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+.table-view .column-header-background {
+    -fx-background-color: #F7FAFC;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 0 0 1px 0;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-padding: 8px 10px;
+}
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A5568;
+}
+.table-row-cell:filled:selected {
+    -fx-background-color: #EBF8FF;
+}
+.table-row-cell:filled:selected .table-cell {
+    -fx-text-fill: #2B6CB0;
+    -fx-font-weight: 500;
+}
+.card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.04), 8, 0, 0, 2);
+    -fx-padding: 20px;
+}
+.status-bar {
+    -fx-background-color: #EDF2F7;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 1px 0 0 0;
+    -fx-padding: 6px 16px;
+}
+.title-large {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A365D;
+}
+.title-medium {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2D3748;
+}
+.receipt-text-area {
+    -fx-font-family: 'Consolas', 'Courier New', monospace;
+    -fx-font-size: 12px;
+    -fx-background-color: #1A202C;
+    -fx-text-fill: #68D391;
+    -fx-border-color: #4A5568;
+    -fx-border-radius: 6px;
+    -fx-padding: 10px;
+}
